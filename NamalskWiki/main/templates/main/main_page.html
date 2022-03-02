@@ -1,0 +1,57 @@
+<!doctype html>
+{% load static %}
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Namalsk Wiki</title>
+    <link rel="stylesheet" href="{% static 'main/css/main_page.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap" rel="stylesheet">
+    <link rel="icon" href="{% static 'main/icon.png' %}">
+</head>
+<body>
+
+    <img class="man1" src="{% static 'main/images/man1.png' %}" alt="">
+    <img class="man2" src="{% static 'main/images/man2.png' %}" alt="">
+
+    <header class="header">
+
+            <h1 class="title">Namalsk Wiki</h1> 
+            <h1 class="subtitle">Документация по проекту</h1>
+
+
+        <main class="all_content">
+
+            <nav class="navigation">
+                <p>Навигация</p>
+                <ul>
+                    {% for c in category %}
+                        <li class="navigation_li"><a href="category/{{c.id}}">{{ c.name }}</a></li>
+                    {% endfor %}
+                </ul>
+            </nav>
+
+            <div class="home">
+                <p>Что это за сайт?</p>
+                <h3>Данный сайт создан для помощи, игрокам проекта Namalsk Role Play.
+                    Здесь вы найдете документацию по разным системам проекта, фракциям,
+                    бизнесу, работам, и так далее. Не много левее есть блок "Навигация",
+                    там вы найдете категории статей написанных автором, на разные темы.
+                    Надеюсь мой сайт окажется полезным для вас :)</h3>
+
+                <p><img class="logo_image" src="{% static 'main/images/logo.png' %}" alt="logo not found"></p>
+                <h3 class="author"><a target="_blank" href="https://t.me/evgenygritsenko">Автор: Evgeny Gritsenko</a>
+                </h3>
+                <h5 class="author"><a href="{% url 'cont_with_auth' %}">Свзяться с автором через почту</a></h5>
+
+            </div>
+        </main>
+    </header>
+
+
+
+</body>
+</html>

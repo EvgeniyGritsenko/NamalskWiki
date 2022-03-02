@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'main/css/contact_with_author.css' %}">
+    <title>Связяться с автором сайта</title>
+    <link rel="icon" href="{% static 'main/icon.png' %}">
+</head>
+<body>
+    <input id="back" type="button" value="Назад" onclick="history.back();"></input>
+    <main>
+        <div id="done" >
+            <h3>Сообщение отправлено автору!<br>Ожидайте ответа в ближайшее время</h3>
+            <input type="button" value="Понял" onclick="CancelDone();">
+        </div>
+
+        <div class="all">
+            <h1>Связятья с автором через почту</h1>
+            <div class="form">
+                <form method="post">
+                    {% csrf_token %}
+                    <h3>Укажите ваш реальный email, что-бы получить ответ</h3>
+                    {{ form.email }} <br>
+                    <h3>Введите сообщение, которое хотите отправить автору</h3>
+                    {{ form.message }} <br>
+                    <button type="submit" onclick="Done();">Отправить автору</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <script src="{% static 'main/js/push.js' %}" >
+        
+    </script>
+</body>
+</html>

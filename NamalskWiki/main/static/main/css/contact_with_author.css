@@ -1,0 +1,131 @@
+.all{
+    width: 1000px;
+    height: 650px;
+    background-color: #0E368C;
+    margin-left: auto; margin-right: auto;
+    border-radius: 30px;
+    margin-top: 30px;
+    font-family: 'Balsamiq Sans', cursive;
+}
+
+#done{
+    background-color: #0165CC;
+    width: 500px;
+    text-align: center;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    font-family: 'Balsamiq Sans', cursive;
+    margin-left: auto;
+    margin-right: auto;
+    border:#0E368C 5px solid;
+    transition: 0.3s;
+    opacity: 0;
+}
+
+#done input{
+    padding: 5px;
+    font-size: 15px;
+    width: 30%;
+    color: white;
+    border:#0E368C 3px solid;
+    background-color: #0165CC;
+    border-radius: 10px;
+    font-family: 'Balsamiq Sans', cursive;
+    transition: 0.3s;
+}
+
+#done input:hover{
+    background-color:#0E368C;
+}
+
+.all h1{
+    text-align: center;
+    color: white;
+}
+
+.form{
+    width: 80%;
+    margin-left: auto; margin-right: auto;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.form h3{
+    color: wheat;
+}
+
+.form_email, .form_message{
+    transition: 0.1s;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    border: #0165CC 3px solid;
+    color: white;
+    background-color: #0E368C;
+    text-align: center;
+    outline: none;
+    font-size: 20px;
+    overflow-x: none;
+}
+
+.form_email{
+    width: 300px;
+    height: 20px;
+}
+
+.form_message{
+    min-width: 600px;
+    min-height: 100px;
+    max-width: 800px;
+    max-height: 250px;
+}
+
+button{
+    width: 300px;
+    height: 50px;
+    border-radius: 10px;
+    border: #0165CC 3px solid;
+    background-color: #0E368C;
+    color: white;
+    font-size: 22px;
+    transition: .3s;
+}
+
+button:hover{
+    background-color: #0165CC;
+}
+
+#back{
+    font-size: 20px;
+    width: 5em;
+    height: 2em;
+    border-radius: 10px;
+    outline: none;
+    color: white;
+    background-color: #0E368C;
+    border: #0165CC 3px solid;
+    transition: 0.3s;
+    position: fixed;
+    margin: 10px
+}
+
+#back:hover{
+    background-color: #0165CC;
+}
+
+body{
+    background-color: #0F08CC;
+    font-family: 'Balsamiq Sans', cursive;
+    color: white;
+}
+
+body::before{
+    content: '';
+    position: fixed;
+    left: 0; right: 0;
+    top: 0; bottom: 0;
+    z-index: -1;
+    background-image: url(contact_fon.png);
+    filter: blur(5px);
+    opacity: 0.5;
+}

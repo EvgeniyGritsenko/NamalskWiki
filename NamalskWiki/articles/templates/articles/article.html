@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'articles/css/article.css' %}">
+    <title>{{ article.title }}</title>
+    <link rel="icon" href="{% static 'main/icon.png' %}">
+</head>
+<body>
+    <input id="back" type="button" value="Назад" onclick="history.back();"></input>
+    
+    <div class="all">
+        <main>
+            <div class="title">{{article.title}}</div>
+
+            <div class="content">
+                <div class="text">
+                    <h1>Справка</h1>
+                    <h2>{{article.content}}</h2>
+                    <h3 class="pub">{{article.published|date:"d.m.Y"}}</h3>
+                </div>
+                
+                <div class="images">
+                    <h1>Фото</h1>
+                    {% for p in photos  %}
+                        {% if p.url != "/media/NotFound" %}
+                        <p><img src="{{p.url}}"></p>
+                        {% endif %}
+                    {% endfor %}
+
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <div class="comments">
+                <h1>Комментарии</h1>
+                {% for i in article.comments.all %}
+
+                    <div class="every_com">
+                        <p class="nick" >{{i.nick}}</p>
+                        <p class="com" >{{i.comment}}</p>
+                        <hr>
+
+                    </div>
+                {% endfor %}
+            </div>
+        
+            <div class="send_comment">
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="nick_comment">
+                        {{ form.nick }} <br>
+                        {{ form.comment }} <br>
+                    <button type="submit">Добавить комментарий</button> <br>
+                </div>
+                </form>
+            </div>
+        </footer>
+
+    </div>
+
+</body>
+</html>

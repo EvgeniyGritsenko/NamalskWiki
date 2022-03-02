@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'articles/css/this_category.css' %}">
+    <title>NamalskWiki - {{ctg.name}}</title>
+    <link rel="icon" href="{% static 'main/icon.png' %}">
+</head>
+<body>
+    <input id="back" type="button" value="Назад" onclick="history.back();"></input>
+    <header class="header">
+        <h1>Статьи категории - <b>{{ctg.name}} ({{ctg.articles.count}}) </b></h1>
+    </header>
+
+    <main>
+        <div class="articles">
+                {% for c in ctg.articles.all %}
+                    <h1 class="category_title">{{c.title}}<br><a class="link" href="article/{{c.id}}">Читать...</a></h1>
+                    <!-- ({{c.published|date:"d, M, Y"}}) -->
+                {% endfor %}
+        </div>
+    </main>
+
+</body>
+</html>
